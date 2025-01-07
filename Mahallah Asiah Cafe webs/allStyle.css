@@ -1,0 +1,392 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-image: url('https://wallpaperaccess.com/full/2614486.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+@keyframes fadeIn { 
+    from { 
+        opacity: 0; 
+    } 
+    to { 
+        opacity: 1; 
+    } 
+} 
+
+header { 
+    background: #213e2e; 
+    color: #fff; 
+    padding: 10px 20px; 
+    text-align: center; 
+} 
+
+nav ul { 
+    list-style: none; 
+    padding: 0; 
+} 
+
+nav ul li { 
+    display: inline; 
+    margin: 0 10px; 
+} 
+
+nav ul li a { 
+    color: #fff; 
+    text-decoration: none; 
+} 
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #213e2e;
+}
+
+.logo {
+    height: 80px; 
+    width: auto; 
+    margin-right: 15px; 
+    cursor: pointer; 
+}
+
+.top-bar input {
+    flex: 1; 
+    margin-right: 10px; 
+}
+
+.sidebar { 
+    background: #213e2e; 
+    color: #fff; 
+    width: 200px; 
+    padding: 15px; 
+    min-height: 360vh;
+    position: absolute;
+    overflow-y: auto;
+}
+
+.sidebar ul { 
+    list-style: none; 
+    padding: 0; 
+} 
+
+.sidebar ul li { 
+    margin: 50px 0; 
+} 
+
+.sidebar ul li a { 
+    color: #fff; 
+    text-decoration: none; 
+    transition: color 0.3s ease; 
+} 
+
+.sidebar ul li a:hover { 
+    color: #213e2e; 
+} 
+
+main { 
+    margin-left: 235px; 
+    margin-bottom: 10px; 
+    padding: 20px; 
+} 
+
+h2 { 
+    margin-bottom: 10px; 
+} 
+
+h1{ 
+    margin: 10px 0; 
+} 
+
+footer { 
+    text-align: right; 
+    padding: 10px 0; 
+    background: #fff; 
+    color: #333; 
+    margin-top: 20px; 
+} 
+
+#search-bar { 
+    flex: 1;
+    padding: 5px; 
+    width: 70%; 
+    border: none; 
+    margin-left: 10px;
+} 
+
+#forward-button, #back-button{ 
+    background: #213e2e; 
+    color: #fff; 
+    border: none; 
+    padding: 5px 10px; 
+    cursor: pointer; 
+    transition: background 0.3s ease; 
+} 
+
+#forward-button:hover, #back-button:hover{ 
+    background: #213e2e; 
+} 
+
+.food-grid { 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px; 
+    margin-top: 0; 
+    padding: 0 100px; 
+} 
+
+@media (max-width: 768px) { 
+    .food-grid { 
+        grid-template-columns: 1fr; 
+        padding: 0 20px; 
+    } 
+} 
+
+.food-item { 
+    display: flex; 
+    text-align: left; 
+    justify-content: flex-start; 
+    flex-direction: row; 
+    align-items: flex-start; 
+    background: #f9f9f9; 
+    padding: 8px; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    max-width: 300px; 
+    transition: transform 0.3s ease; 
+} 
+
+.food-item img { 
+    display: flex; 
+    width: 100%; 
+    max-width: 100px; 
+    height: auto; 
+    margin-right: 10px; 
+    border-radius: 5px; 
+} 
+
+.food-item p { 
+    margin: 0; 
+    padding-top: 2px; 
+    font-size: 14px; 
+    color: black; 
+} 
+
+.food-description { 
+    flex: 1; 
+    text-align: left; 
+} 
+
+.food-item br { 
+    margin: 0; 
+    line-height: 1.8; 
+    font-size: 14px; 
+}
+
+.results-container { 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px; 
+    margin-top: 0; 
+    padding: 0 100px; 
+} 
+
+.result-item { 
+    display: flex; 
+    text-align: left; 
+    justify-content: flex-start; 
+    background: #f9f9f9; 
+    padding: 8px; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    max-width: 300px; 
+    transition: transform 0.3s ease; 
+} 
+
+.result-item img { 
+    width: 100%; 
+    max-width: 100px; 
+    height: auto; 
+    margin-right: 10px; 
+} 
+
+.result-item p { 
+    margin: 0; 
+    padding-top: 2px; 
+    font-size: 14px; 
+    color: #000000; 
+    font-weight: bold; 
+}
+
+footer {
+    display: flex; /* Enables flexbox for alignment */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 100px; /* Optional: Adjust height as needed */
+    background-color: #f8f9fa; /* Optional: Footer background color */
+}
+
+#order-button {
+    background-color: #213e2e; /* Blue color for the button */
+    color: #ffffff; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding inside the button */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-decoration: none; /* No underline */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+#order-button:hover {
+    background-color: #213e2e; /* Darker blue on hover */
+}
+  
+  header {
+    width: 100%;
+    background-color: black;
+    padding: 25px 0;
+    position: absolute;
+    top: 0;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navbar li {
+    margin: 0 15px;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+  }
+  
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+  
+  .welcome-message {
+    margin-top: 20px;
+    text-align: center;
+    flex-grow: 1;
+  }
+  
+  h1 {
+    font-size: 15px;
+    color: white;
+  }
+  
+  h2 {
+    font-size: 45px;
+    color: white;
+  }
+  
+  .orderNowButton {
+    background-color: #ff9800; 
+    color: black;
+    border: none;
+    padding: 10px 20px; 
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 50px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #homeSection, #stallSection, #aboutSection, #locationSection {
+    display: none; /* Hide all sections initially */
+  }
+  
+  #homeSection {
+    display: block; /* Show the home section on load */
+  }
+  
+  .shop-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+    grid-gap: 20px;
+    width: 80%; /* Adjust width as needed */
+    max-width: 1000px; /* Optional: to control the container width */
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Exact centering */
+  }
+  
+  .shop-box {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .shop-image {
+    width: 100%; /* Set a fixed width for all images */
+    height: 150px; /* Set a fixed height for all images */
+    object-fit: cover; /* Ensure the image fills the box without distortion */
+    border-radius: 8px; /* Optional: round the image corners */
+    margin-bottom: 5px; /* Add space between the image and the text */
+  }
+  
+  .container {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    width: 100%;
+    height: 100%; /* Make sure the container fills the available height */
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+  }
+  
+  #map {
+    flex: 1;
+    width: 650px; /* Adjust the width of the map */
+    height: 450px; /* Define the height of the map */
+  }
+  
+  .info {
+    width: 40%; /* Adjust width as needed */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+    align-items: flex-start; /* Align text to the left */
+  }
+  
+  .info h2 {
+    margin-top: 0;
+  }
+  
+  .info p {
+    margin: 10px 0;
+    text-align: left; /* Ensure the text is left-aligned */
+  }
+  

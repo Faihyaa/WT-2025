@@ -1,0 +1,305 @@
+/*body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-image: url('https://wallpaperaccess.com/full/2614486.jpg'); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+header {
+  width: 100%;
+  background-color: black;
+  padding: 25px 0;
+  position: absolute;
+  top: 0;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 13px;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.welcome-message {
+  margin-top: 20px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+h1 {
+  font-size: 15px;
+  color: white;
+}
+
+h2 {
+  font-size: 45px;
+  color: white;
+}
+
+.orderNowButton {
+  background-color: #ff9800; 
+  color: black;
+  border: none;
+  padding: 10px 20px; 
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 50px;
+  transition: background-color 0.3s ease;
+}
+
+#homeSection, #stallSection, #aboutSection, #locationSection {
+  display: none; /* Hide all sections initially 
+}
+
+#homeSection {
+  display: block; /* Show the home section on load 
+}
+
+.shop-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 items per row 
+  grid-gap: 20px;
+  width: 80%; /* Adjust width as needed 
+  max-width: 1000px; Optional: to control the container width 
+  position: absolute;
+  top: 50%; /* Center vertically 
+  left: 50%; /* Center horizontally 
+  transform: translate(-50%, -50%); /* Exact centering 
+}
+
+.shop-box {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.shop-image {
+  width: 100%; 
+  height: 150px; 
+  object-fit: cover; 
+  border-radius: 8px; 
+  margin-bottom: 5px; 
+}
+
+.container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  width: 100%;
+  height: 100%; 
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
+
+#map {
+  flex: 1;
+  width: 650px; 
+  height: 450px; 
+}
+
+.info {
+  width: 40%; 
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  align-items: flex-start; 
+}
+
+.info h2 {
+  margin-top: 0;
+}
+
+.info p {
+  margin: 10px 0;
+  text-align: left; /* Ensure the text is left-aligned 
+}*/
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-image: url('https://wallpaperaccess.com/full/2614486.jpg'); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+header {
+  width: 100%;
+  background-color: black;
+  padding: 25px 0;
+  position: absolute;
+  top: 0;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 13px;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.welcome-message {
+  margin-top: 20px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+h1 {
+  font-size: 15px;
+  color: white;
+}
+
+h2 {
+  font-size: 45px;
+  color: white;
+}
+
+.orderNowButton {
+  background-color: #ff9800; 
+  color: black;
+  border: none;
+  padding: 10px 20px; 
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 50px;
+  transition: background-color 0.3s ease;
+}
+
+#homeSection, #stallSection, #aboutSection, #locationSection {
+  display: none; /* Hide all sections initially */
+}
+
+#homeSection {
+  display: block; /* Show the home section on load */
+}
+
+.shop-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+  grid-gap: 20px;
+  width: 80%; /* Adjust width as needed */
+  max-width: 1000px; /* Optional: to control the container width */
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Exact centering */
+}
+
+.shop-box {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.shop-image {
+  width: 100%; /* Set a fixed width for all images */
+  height: 150px; /* Set a fixed height for all images */
+  object-fit: cover; /* Ensure the image fills the box without distortion */
+  border-radius: 8px; /* Optional: round the image corners */
+  margin-bottom: 5px; /* Add space between the image and the text */
+}
+
+.container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  width: 100%;
+  height: 100%; /* Make sure the container fills the available height */
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%);
+}
+
+#map {
+  flex: 1;
+  width: 700px; /* Adjust the width of the map */
+  height: 400px; /* Define the height of the map */
+}
+
+.info {
+  width: 40%; /* Adjust width as needed */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  align-items: flex-start; /* Align text to the left */
+}
+
+.info h2 {
+  margin-top: 0;
+}
+
+.info p {
+  margin: 10px 0;
+  text-align: left; /* Ensure the text is left-aligned */
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahallah Asiah Cafe</title>
+  <link rel="stylesheet" href="homepage.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#" onclick="navigateTo('home')" style="color: white"><strong>HOME</strong></a></li>
+        <li><a href="#" onclick="navigateTo('stall')" style="color: white;"><strong>STALL</strong></a></li>
+        <li><a href="#" onclick="navigateTo('about')" style="color: white;"><strong>ABOUT US</strong></a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <div id="homeSection" class="welcome-message">
+      <h1 style="color: white; margin: 5px; letter-spacing: 3px;">WELCOME TO</h1>
+      <h2 style="color: white; margin: 0; letter-spacing: 5px;">Mahallah Asiah Cafe</h2>
+      <button class="orderNowButton" onclick="navigateTo('stall')">ORDER NOW!</button>
+    </div>
+  </main>
+
+  <script src="homepage.js" defer></script>
+  
+</body>
+</html>

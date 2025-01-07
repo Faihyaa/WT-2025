@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahallah Asiah Cafe</title>
+  <link rel="stylesheet" href="homepage.css">
+  <script src="homepage.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#" onclick="navigateTo('home')" style="color: white"><strong>HOME</strong></a></li>
+        <li><a href="#" onclick="navigateTo('stall')" style="color: white;"><strong>STALL</strong></a></li>
+        <li><a href="#" onclick="navigateTo('about')" style="color: white;"><strong>ABOUT US</strong></a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <div id="stallSection" style="display: none;">
+      <div class="shop-container">
+        <div class="shop-box" onclick="navigateTo('home')">
+          <img src="https://th.bing.com/th/id/OIP.gpD8wC7-RpOqR1_eqtf4FQHaE8?rs=1&pid=ImgDetMain.jpg" alt="Mahallah Asiah Cafe" class="shop-image">
+          <p>Mahallah Asiah Cafe</p>
+        </div>
+        <div class="shop-box" onclick="navigateTo('home')">
+          <img src="https://sallysbakingaddiction.com/wp-content/uploads/2014/09/buttermilk-waffles-recipe.jpg" alt="Ayam Kunyit & Waffle" class="shop-image">
+          <p>Ayam Kunyit & Waffle</p>
+        </div>
+        <div class="shop-box" onclick="navigateTo('OdenTako')">
+          <img src="https://cdn.shopify.com/s/files/1/1083/2612/articles/unnamed_0fee512e-0c46-4966-a2cb-719614098063_4800x.jpg?v=1599765261.jpg" alt="Oden & Takoyaki" class="shop-image">
+          <p>Oden & Takoyaki</p>
+        </div>
+        <div class="shop-box" onclick="navigateTo('NasiLemak')">
+          <img src="https://asianinspirations.com.au/wp-content/uploads/2019/04/R02156_Mums-NasiLemak.jpg" alt="Nasi Lemak Bunga Telang" class="shop-image">
+          <p>Nasi Lemak Bunga Telang</p>
+        </div>
+        <div class="shop-box" onclick="navigateTo('burger')">
+          <img src="https://images.deliveryhero.io/image/fd-my/LH/dbt9-hero.jpg" alt="Burger Celup" class="shop-image">
+          <p>Burger Celup</p>
+        </div>
+        <div class="shop-box" onclick="navigateTo('dumpling')">
+          <img src="https://thestrongtraveller.com/wp-content/uploads/2020/12/dumpling-2.jpg" alt="Dingdong Dumpling" class="shop-image">
+          <p>Dingdong Dumpling</p>
+        </div>
+      </div>
+    </div>    
+  </main>
+</body>
+</html>

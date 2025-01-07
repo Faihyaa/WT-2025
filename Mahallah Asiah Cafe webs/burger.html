@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="allStyle.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <a href="homepage.html">
+                <img src="logo.jpg" alt="Logo" class="logo">
+            </a>
+            <input type="text" id="search-bar" placeholder="Search..." onkeypress="handleSearch(event)">
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="homepage.html">About</a></li>
+                    <li><a href="homepage.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <aside class="sidebar">
+        <ul>
+            <li><a href="index.html">MAHALLAH ASIAH CAFE</a></li>
+            <li><a href="about.html">AYAM KUNYIT & WAFFLE</a></li>
+            <li><a href="OdenTako.html">ODEN & TAKOYAKI</a></li>
+            <li><a href="NasiLemak.html">NASI LEMAK BUNGA TELANG</a></li>
+            <li><a href="burger.html">BURGER CELUP</a></li>
+            <li><a href="dumpling.html">DINGDONG DUMPLING</a></li>
+        </ul>
+    </aside>
+    <main>
+        <div id="results" class="results-container"></div>
+        <h2>Burger Celup & Ayam Gunting</h2>
+        <div class="food-grid">
+            <div class="food-item">
+                <img src="beef burger.jpg" alt="Beef Burger">
+                <div class="food-description">
+                    <h3>Beef Burger</h3>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="special beef burger.jpg" alt="Special Beef Burger">
+                <div class="food-description">
+                    <h3>Special Beef Burger</h3>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="double special beef burger.jpg" alt="Double Special Beef Burger">
+                <div class="food-description">
+                    <h3>Double Special Beef Burger</h3>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="beef patty only.jpg" alt="Beef Patty">
+                <div class="food-description">
+                    <h3>Beef Patty</h3>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="chicken burger.jpeg" alt="Chicken Burger">
+                <div class="food-description">
+                    <h3>Chicken Burger</h3>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="special chicken.jpg" alt="Special Chicken">
+                <div class="food-description">
+                    <h3>Special Chicken Burger</h3>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="double special chicken.jpg" alt="Double Special Chicken">
+                <div class="food-description">
+                    <h3>Double Special Chicken Burger</h3>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="ayam gunting.jpg" alt="Ayam Gunting">
+                <div class="food-description">
+                    <h3>Ayam Gunting</h3>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p><a href="https://chat.whatsapp.com/KN1kYZfeoI10tdX9gf2wx9" target="_blank" style="text-decoration: underline; color: #0000ff">Want to order? Contact Us.</a></p>
+    </footer>
+    <script>
+        // Search functionality
+        function handleSearch(event) {
+            if (event.key === "Enter") {
+                const query = event.target.value.trim();
+                if (query) {
+                    window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+                } else {
+                    alert("Please enter a search term.");
+                }
+            }
+        }
+
+        const foodData = {
+            "Oden": { name: "Oden", img: "oden.jpeg" },
+            "Takoyaki": { name: "Takoyaki", img: "takoyaki1.jpeg" },
+            "Beef Burger": { name: "Beef Burger", img: "beef burger.jpg" },
+            // Add other food items as necessary
+        };
+
+        const searchBar = document.getElementById("search-bar");
+        const resultsContainer = document.getElementById("results");
+
+        function displayResults(query) {
+            resultsContainer.innerHTML = "";
+            if (!query) return;
+
+            const filteredItems = Object.values(foodData).filter(item =>
+                item.name.toLowerCase().includes(query.toLowerCase())
+            );
+
+            if (filteredItems.length > 0) {
+                filteredItems.forEach(food => {
+                    const resultItem = document.createElement("div");
+                    resultItem.classList.add("result-item");
+                    resultItem.innerHTML = `
+                        <img src="${food.img}" alt="${food.name}">
+                        <p>${food.name}</p>
+                    `;
+                    resultsContainer.appendChild(resultItem);
+                });
+            } else {
+                resultsContainer.innerHTML = `<p>No results found for "${query}".</p>`;
+            }
+        }
+
+        searchBar.addEventListener("input", () => {
+            const query = searchBar.value.trim();
+            displayResults(query);
+        });
+    </script>
+</body>
+</html>

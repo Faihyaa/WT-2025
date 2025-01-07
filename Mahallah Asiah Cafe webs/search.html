@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="allStyle.css">
+    <script src="script.js" defer></script>
+    <title>Home</title>
+    <body>
+        <header>
+            <div class="top-bar">
+                <a href="homepage.html">
+                    <img src="logo.jpg" alt="Logo" class="logo">
+                </a>
+                <input type="text" id="search-bar" placeholder="Search...">
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="homepage.html">About</a></li>
+                    <li><a href="homepage.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <aside class="sidebar">
+            <ul>
+                <li><a href="index.html">MAHALLAH ASIAH CAFE </a></li>
+                <li><a href="about.html">AYAM KUNYIT & WAFFLE</a></li>
+                <li><a href="OdenTako.html">ODEN & TAKOYAKI</a></li>
+                <li><a href="NasiLemak.html">NASI LEMAK BUNGA TELANG</a></li>
+                <li><a href="burger.html">BURGER CELUP</a></li>
+                <li><a href="dumpling.html">DINGDONG DUMPLING</a></li>
+            </ul>
+        </aside>
+</head>
+    <body>
+        <main>
+            <div id="results" class="results-container"></div>
+        </main>
+
+        <script>
+            const foodData = {
+                "Oden": { name: "Oden", img: "oden.jpeg" },
+                "Takoyaki": { name: "Takoyaki", img: "takoyaki1.jpeg" },
+                "Yong Tau Foo": { name: "Yong Tau Foo", img: "YongTF.jpeg" },
+                "Maggi": { name: "Maggi", img: "maggi.jpg" },
+                "Beef Burger": { name: "Beef Burger", img: "beef burger.jpg" },
+                "Special Beef Burger": { name: "Special Beef Burger", img: "special beef burger.jpg" },
+                "Double Special Beef Burger": { name: "Double Special Beef Burger", img: "double special beef burger.jpg" },
+                "Beef Patty": { name: "Beef Patty", img: "beef patty only.jpg" },
+                "Chicken Burger": { name: "Chicken Burger", img: "chicken burger.jpeg" },
+                "Special Chicken Burger": { name: "Special Chicken Burger", img: "special chicken.jpg" },
+                "Double Special Chicken Burger": { name: "Double Special Chicken Burger", img: "double special chicken.jpg" },
+                "Chicken Patty": { name: "Chicken Patty", img: "chicken patty.jpg" },
+                "Benjo": { name: "Benjo", img: "benjo burger.jpg" },
+                "Ayam Gunting": { name: "Ayam Gunting", img: "ayam gunting.jpg" },
+                "Ayam Sate": { name: "Ayam Sate", img: "ayam gunting.jpg" },
+                "Sosej Cheese (L)": { name: "Sosej Cheese (L)", img: "ayam gunting.jpg" },
+                "Sosej Cheese Jumbo": { name: "Sosej Cheese Jumbo", img: "ayam gunting.jpg" },
+                "Beef Dumpling": { name: "Beef Dumpling", img: "beef dumpling.jpg" },
+                "Chicken Dumpling": { name: "Chicken Dumpling", img: "chicken dumpling.jpg" },
+                "Vegetable Dumpling": { name: "Vegetable Dumpling", img: "vegetable dumpling.jpg" },
+                "Mee Tarik": { name: "Mee Tarik", img: "mee tarik.jpg" },
+                "Nasi lemak biasa": { name: "Nasi Lemak Biasa", img: "NLB1.jpg" },
+                "Nasi Lemak Ayam Goreng Berempah": { name: "Nasi Lemak Ayam Goreng Berempah", img: "NLAG.jpg" },
+                "Nasi Lemak Telur Mata": { name: "Nasi Lemak Telur Mata", img: "NLTM1.jpg" },
+                "Nasi Lemak Sambal Paru": { name: "Nasi Lemak Sambal Paru", img: "NLSP.jpg" },
+                "Nasi Lemak Smabal Kerang": { name: "Nasi Lemak Kerang", img: "NLK.jpg" },
+                "Nasi Lemak Smabal Hitam": { name: "Nasi Lemak Sambal Hitam", img: "NLSH.jpg" }
+            };
+
+             // Listen for user input in the search bar
+            const searchBar = document.getElementById("search-bar");
+            const resultsContainer = document.getElementById("results");
+
+            // Function to filter and display results
+            function displayResults(query) {
+                resultsContainer.innerHTML = ""; // Clear previous results
+            }
+            // Function to filter and display results
+            function displayResults(query) {
+                resultsContainer.innerHTML = ""; // Clear previous results
+
+                if (!query) {
+                    resultsContainer.innerHTML;
+                    return;
+                }
+
+                // Filter the foodData to find matches
+                const filteredItems = Object.values(foodData).filter(item =>
+                    item.name.toLowerCase().includes(query.toLowerCase())
+                );
+
+                if (filteredItems.length > 0) {
+                    // Display all matching items
+                    filteredItems.forEach(food => {
+                        const resultItem = document.createElement("div");
+                        resultItem.classList.add("result-item");
+                        resultItem.innerHTML = `
+                            <img src="${food.img}" alt="${food.name}">
+                            <p>${food.name}</p>
+                        `;
+                        resultsContainer.appendChild(resultItem);
+                    });
+                } else {
+                    // No results found
+                    resultsContainer.innerHTML = `<p>No results found for "${query}".</p>`;
+                }
+            }
+
+            // Event listener for the search bar
+            searchBar.addEventListener("input", () => {
+                const query = searchBar.value.trim(); // Get the input value
+                displayResults(query); // Display the search results
+            });
+
+            // Pre-fill the search bar if there's a query in the URL
+            const params = new URLSearchParams(window.location.search);
+            const query = params.get('q');
+            if (query) {
+                searchBar.value = query;
+                displayResults(query); // Show results for initial query        
+            }
+        </script>
+    </body>
+</html>

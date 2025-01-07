@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="allStyle.css">
+
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <a href="dumpling.html">
+                <img src="logo.jpg" alt="Logo" class="logo">
+            </a>
+            <input type="text" id="search-bar" placeholder="Search..." onkeypress="handleSearch(event)">
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <aside class="sidebar">
+        <ul>
+            <li><a href="index.html">MAHALLAH ASIAH CAFE </a></li>
+            <li><a href="about.html">AYAM KUNYIT & WAFFLE</a></li>
+            <li><a href="OdenTako.html">ODEN & TAKOYAKI</a></li>
+            <li><a href="NasiLemak.html">NASI LEMAK BUNGA TELANG</a></li>
+            <li><a href="burger.html">BURGER CELUP</a></li>
+            <li><a href="dumpling.html">DINGDONG DUMPLING</a></li>
+        </ul>
+    </aside>
+    <main>
+        <h2>DingDong Dumpling</h2>
+        <div class="food-grid">
+            <div class="food-item">
+                <img id="myImage" src="beef dumpling.jpg" alt="Beef Dumpling">
+                <div class="food-description">
+                    <h3>Strong Beef Dumpling</h3>
+                </div>
+            </div>
+            <div class="food-item">
+                <img id="myImage" src="chicken dumpling.jpg" alt="Chicken Dumpling">
+                <div class="food-description">
+                    <h3>Brave Chicken Dumpling</h3>
+                </div>
+            </div>
+            <div class="food-item">
+                <img id="myImage" src="vegetable dumpling.jpg" alt="Vegetable Dumpling">
+                <div class="food-description">
+                    <h3>Healthy Vegetable Dumpling</h3>
+                </div>
+            </div>
+            <div class="food-item">
+                <img id="myImage" src="mee tarik.jpg" alt="Mee Tarik">
+                <div class="food-description">
+                    <h3>Mee Tarik</h3>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <button id="order-button" onclick="window.open('http://www.wasap.my/+8615966423393/OrderDingDongDumpling', '_blank')">
+            Want to order? Contact Us
+        </button>
+    </footer>
+    <script>
+        function handleSearch(event) {
+            if (event.key === "Enter") {
+                const query = event.target.value.trim(); // Get user input
+                if (query) {
+                    // Redirect to the search results page with the query
+                    window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+                } else {
+                    alert("Please enter a search term.");
+                }
+            }
+        }
+    </script> 
+</body>
+</html>

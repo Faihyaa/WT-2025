@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <a href="index.html">
+                <img src="logo.jpg" alt="Logo" class="logo">
+            </a>
+            <button id="back-button" onclick="history.back()">←</button>
+            <button id="forward-button" onclick="history.forward()">→</button>
+            <input type="text" id="search-bar" placeholder="Search..." onkeypress="handleSearch(event)">
+        </div>
+        <h1>Welcome to Mahallah Asiah</h1>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <aside class="sidebar">
+        <ul>
+            <li><a href="index.html">Mahallah Asiah Cafe</a></li>
+            <li><a href="about.html">Ayam Kunyit & Waffle</a></li>
+            <li><a href="OdenTako.html">Oden & Takoyaki</a></li>
+            <li><a href="NasiLemak.html">Nasi Lemak Bunga Telang</a></li>
+            <li><a href="burger.html">Burger Celup</a></li>
+            <li><a href="dumpling.html">Dingdong Dumpling</a></li>
+        </ul>
+    </aside>
+    <main>
+        <h2>Ayam Kunyit & Waffle</h2>
+        <div class="food-grid">
+            <div class="food-item">
+                <img src="oden.jpeg" alt="Ayam Kunyit">
+                <div class="food-description">
+                    <h3>Ayam Kunyit</h3>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="takoyaki1.jpeg" alt="Waffle Chocolate">
+                <div class="food-description">
+                    <h3>Waffle Chocolate</h3>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="YongTF.jpeg" alt="Daging Kunyit">
+                <div class="food-description">
+                    <h3>Daging Kunyit</h3>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="maggi.jpg" alt="Waffle Strawberry">
+                <div class="food-description">
+                    <h3>Waffle Strawberry</h3>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="maggi.jpg" alt="Waffle Strawberry">
+                <div class="food-description">
+                    <h3>Sotong Kunyit</h3>
+                </div>
+            </div>
+            <div class="food-item">
+                <img src="maggi.jpg" alt="Waffle Strawberry">
+                <div class="food-description">
+                    <h3>Waffle Peanutbutter</h3>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <a href="https://chat.whatsapp.com/D4Al4PHT30N0g1nHAEnCJW" target="_blank" class="contact-link">Want to order? Contact us.</a>
+    </footer>
+    <script>
+        function handleSearch(event) {
+            if (event.key === "Enter") {
+                const query = event.target.value.trim(); // Get user input
+                if (query) {
+                    // Redirect to the search results page with the query
+                    window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+                } else {
+                    alert("Please enter a search term.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
