@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mahallah Asiah Cafe</title>
   <link rel="stylesheet" href="homepage.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 </head>
 
 <body>
@@ -20,14 +21,73 @@
   </header>
   
   <main>
+
     <div id="homeSection" class="welcome-message">
-      <h1 style="color: white; margin: 5px; letter-spacing: 3px;">WELCOME TO</h1>
+      <h1 style="color: white; margin: 5; letter-spacing: 3px;">WELCOME TO</h1>
       <h2 style="color: white; margin: 0; letter-spacing: 5px;">Mahallah Asiah Cafe</h2>
       <button class="orderNowButton" onclick="navigateTo('stall')">ORDER NOW!</button>
     </div>
-  </main>
-
-  <script src="homepage.js" defer></script>
+    
+    <div id="stallSection" style="display: none;">
+      <div class="shop-container">
+        <div class="shop-box" onclick="navigateTo('home')">
+          <img src="https://th.bing.com/th/id/OIP.gpD8wC7-RpOqR1_eqtf4FQHaE8?rs=1&pid=ImgDetMain.jpg" alt="Mahallah Asiah Cafe" class="shop-image">
+          <p>Mahallah Asiah Cafe</p>
+        </div>
+        <div class="shop-box" onclick="navigateTo('home')">
+          <img src="https://sallysbakingaddiction.com/wp-content/uploads/2014/09/buttermilk-waffles-recipe.jpg" alt="Ayam Kunyit & Waffle" class="shop-image">
+          <p>Ayam Kunyit & Waffle</p>
+        </div>
+        <div class="shop-box" onclick="navigateTo('home')">
+          <img src="https://cdn.shopify.com/s/files/1/1083/2612/articles/unnamed_0fee512e-0c46-4966-a2cb-719614098063_4800x.jpg?v=1599765261.jpg" alt="Oden & Takoyaki" class="shop-image">
+          <p>Oden & Takoyaki</p>
+        </div>
+        <div class="shop-box" onclick="navigateTo('home')">
+          <img src="https://asianinspirations.com.au/wp-content/uploads/2019/04/R02156_Mums-NasiLemak.jpg" alt="Nasi Lemak Bunga Telang" class="shop-image">
+          <p>Nasi Lemak Bunga Telang</p>
+        </div>
+        <div class="shop-box" onclick="navigateTo('home')">
+          <img src="https://images.deliveryhero.io/image/fd-my/LH/dbt9-hero.jpg" alt="Burger Celup" class="shop-image">
+          <p>Burger Celup</p>
+        </div>
+        <div class="shop-box" onclick="navigateTo('home')">
+          <img src="https://thestrongtraveller.com/wp-content/uploads/2020/12/dumpling-2.jpg" alt="Dingdong Dumpling" class="shop-image">
+          <p>Dingdong Dumpling</p>
+        </div>
+      </div>
+    </div>    
+    
+    <div id="aboutSection" class="container" style="display: none;">
+      <div id="map"></div>
+      <div class="info">
+        <p style="color: white; margin: 0px;"><strong>Address:</strong></p>
+        <p style="color: white; margin-top: 5px; margin-bottom: 35px;">Mahallah Asiah Cafe, IIUM, Jalan Gombak, 53100 Gombak Selangor, Malaysia</p>
+        <p style="color: white; margin: 0px;"><strong>Operating Hours:</strong></p>
+        <p style="color: white; margin-top: 5px;">7:00 AM - 11:00 PM</p>
+      </div>
+    </div>
   
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    
+    <script>
+      var map = L.map('map').setView([3.2583, 101.7336], 13); // Coordinates for Mahallah Asiah Cafe
+
+      // Add OpenStreetMap tile layer
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      // Add a marker at the cafe's location
+      L.marker([3.2583, 101.7336]).addTo(map)
+        .bindPopup('<b>Mahallah Asiah Cafe</b><br>IIUM, Jalan Gombak, 53100 Gombak Selangor, Malaysia')
+        .openPopup();
+
+      // Initialize the page with the home section visible
+      navigateTo('home');
+    </script>
+
+    <script src="homepage.js"></script>
+
+  </main>
 </body>
 </html>
